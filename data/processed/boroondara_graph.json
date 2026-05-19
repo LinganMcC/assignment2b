@@ -1,0 +1,755 @@
+{
+  "nodes": {
+    "970": {
+      "name": "WARRIGAL_RD N of HIGH STREET_RD",
+      "lat": -37.867303,
+      "lon": 145.091511
+    },
+    "2000": {
+      "name": "WARRIGAL_RD N of TOORAK_RD",
+      "lat": -37.851923,
+      "lon": 145.094324
+    },
+    "2200": {
+      "name": "UNION_RD N of MAROONDAH_HWY",
+      "lat": -37.81654,
+      "lon": 145.098047
+    },
+    "2820": {
+      "name": "EARL_ST SE of PRINCESS_ST",
+      "lat": -37.794785,
+      "lon": 145.030465
+    },
+    "2825": {
+      "name": "BURKE_RD S of EASTERN_FWY",
+      "lat": -37.78661,
+      "lon": 145.06202
+    },
+    "2827": {
+      "name": "BULLEEN_RD N of THOMPSONS_RD",
+      "lat": -37.781739,
+      "lon": 145.077331
+    },
+    "2846": {
+      "name": "S.E.ARTERIAL N OF HIGH_ST",
+      "lat": -37.861304,
+      "lon": 145.057875
+    },
+    "3001": {
+      "name": "HIGH_ST NE of BARKERS_RD",
+      "lat": -37.814565,
+      "lon": 145.02221
+    },
+    "3002": {
+      "name": "DENMARK_ST N of BARKERS_RD",
+      "lat": -37.815162,
+      "lon": 145.026572
+    },
+    "3120": {
+      "name": "BURKE_RD N of CANTERBURY_RD",
+      "lat": -37.822895,
+      "lon": 145.057288
+    },
+    "3122": {
+      "name": "CANTERBURY_RD E of STANHOPE_GV",
+      "lat": -37.823857,
+      "lon": 145.064393
+    },
+    "3126": {
+      "name": "CANTERBURY_RD E of WARRIGAL_RD",
+      "lat": -37.827847,
+      "lon": 145.098577
+    },
+    "3127": {
+      "name": "BALWYN_RD N of CANTERBURY_RD",
+      "lat": -37.825227,
+      "lon": 145.077947
+    },
+    "3180": {
+      "name": "DONCASTER_RD E of BALWYN_RD",
+      "lat": -37.796213,
+      "lon": 145.083507
+    },
+    "3662": {
+      "name": "PRINCESS_ST N of HIGH_ST",
+      "lat": -37.808952,
+      "lon": 145.027457
+    },
+    "3682": {
+      "name": "WARRIGAL_RD N OF RIVERSDALE_RD",
+      "lat": -37.837475,
+      "lon": 145.096868
+    },
+    "3685": {
+      "name": "WARRIGAL_RD N of HIGHBURY_RD",
+      "lat": -37.854871,
+      "lon": 145.093924
+    },
+    "3804": {
+      "name": "TRAFALGAR_RD N of RIVERSDALE_RD",
+      "lat": -37.833643,
+      "lon": 145.062392
+    },
+    "3812": {
+      "name": "TRAFALGAR_RD NE of CAMBERWELL_RD",
+      "lat": -37.83749,
+      "lon": 145.060865
+    },
+    "4030": {
+      "name": "BURKE_RD S of DONCASTER_RD",
+      "lat": -37.79533,
+      "lon": 145.061607
+    },
+    "4032": {
+      "name": "BURKE_RD N of HARP_RD",
+      "lat": -37.802297,
+      "lon": 145.06123
+    },
+    "4034": {
+      "name": "BURKE_RD N OF WHITEHORSE_RD",
+      "lat": -37.81185,
+      "lon": 145.059405
+    },
+    "4035": {
+      "name": "BURKE_RD N of MONT ALBERT_RD",
+      "lat": -37.818156,
+      "lon": 145.058123
+    },
+    "4040": {
+      "name": "BURKE_RD N of RIVERSDALE_RD",
+      "lat": -37.832872,
+      "lon": 145.055423
+    },
+    "4043": {
+      "name": "BURKE_RD N of TOORAK_RD",
+      "lat": -37.84716,
+      "lon": 145.052627
+    },
+    "4051": {
+      "name": "DONCASTER_RD E of BULLEEN_RD",
+      "lat": -37.794143,
+      "lon": 145.069333
+    },
+    "4057": {
+      "name": "BALWYN_RD N OF BELMORE_RD",
+      "lat": -37.804969,
+      "lon": 145.08176
+    },
+    "4063": {
+      "name": "BALWYN_RD N OF WHITEHORSE_RD",
+      "lat": -37.814372,
+      "lon": 145.080005
+    },
+    "4262": {
+      "name": "BRIDGE_RD SW of BURWOOD_RD",
+      "lat": -37.82155,
+      "lon": 145.01503
+    },
+    "4263": {
+      "name": "POWER_ST N of BURWOOD_RD",
+      "lat": -37.823056,
+      "lon": 145.024958
+    },
+    "4264": {
+      "name": "GLENFERRIE_RD N of BURWOOD_RD",
+      "lat": -37.824105,
+      "lon": 145.034006
+    },
+    "4266": {
+      "name": "BURWOOD_RD E of AUBURN_RD",
+      "lat": -37.825297,
+      "lon": 145.043447
+    },
+    "4270": {
+      "name": "GLENFERRIE_RD N of RIVERSDALE_RD",
+      "lat": -37.830228,
+      "lon": 145.032815
+    },
+    "4272": {
+      "name": "RIVERSDALE_RD E of TOORONGA_RD",
+      "lat": -37.831883,
+      "lon": 145.046393
+    },
+    "4273": {
+      "name": "TOORONGA_RD N of TOORAK_RD",
+      "lat": -37.84659,
+      "lon": 145.04443
+    },
+    "4321": {
+      "name": "HIGH_ST NE OF HARP_ST",
+      "lat": -37.800838,
+      "lon": 145.049119
+    },
+    "4324": {
+      "name": "COTHAM_RD E OF GLENFERRIE_RD",
+      "lat": -37.809332,
+      "lon": 145.036848
+    },
+    "4335": {
+      "name": "HIGH_ST NE of CHARLES_ST",
+      "lat": -37.806215,
+      "lon": 145.03525
+    },
+    "4812": {
+      "name": "SWAN_ST NE of MADDEN_GV",
+      "lat": -37.828913,
+      "lon": 145.015587
+    },
+    "4821": {
+      "name": "WALMER_ST N OF VICTORIA_ST",
+      "lat": -37.812965,
+      "lon": 145.00847
+    }
+  },
+  "edges": {
+    "970": [
+      {
+        "to": 3685,
+        "distance_km": 1.398
+      }
+    ],
+    "2000": [
+      {
+        "to": 3682,
+        "distance_km": 1.622
+      },
+      {
+        "to": 3685,
+        "distance_km": 0.33
+      },
+      {
+        "to": 4043,
+        "distance_km": 3.699
+      },
+      {
+        "to": 4262,
+        "distance_km": 7.739
+      },
+      {
+        "to": 4263,
+        "distance_km": 6.885
+      },
+      {
+        "to": 4264,
+        "distance_km": 6.134
+      },
+      {
+        "to": 4266,
+        "distance_km": 5.36
+      }
+    ],
+    "2200": [],
+    "2820": [
+      {
+        "to": 3662,
+        "distance_km": 1.597
+      }
+    ],
+    "2825": [
+      {
+        "to": 4030,
+        "distance_km": 0.97
+      }
+    ],
+    "2827": [
+      {
+        "to": 4051,
+        "distance_km": 1.548
+      }
+    ],
+    "2846": [
+      {
+        "to": 3001,
+        "distance_km": 6.068
+      },
+      {
+        "to": 3662,
+        "distance_km": 6.405
+      },
+      {
+        "to": 4030,
+        "distance_km": 7.343
+      },
+      {
+        "to": 4321,
+        "distance_km": 6.767
+      },
+      {
+        "to": 4335,
+        "distance_km": 6.44
+      }
+    ],
+    "3001": [
+      {
+        "to": 2846,
+        "distance_km": 6.068
+      },
+      {
+        "to": 3002,
+        "distance_km": 0.389
+      },
+      {
+        "to": 3662,
+        "distance_km": 0.776
+      },
+      {
+        "to": 4321,
+        "distance_km": 2.814
+      },
+      {
+        "to": 4335,
+        "distance_km": 1.475
+      }
+    ],
+    "3002": [
+      {
+        "to": 3001,
+        "distance_km": 0.389
+      },
+      {
+        "to": 3662,
+        "distance_km": 0.695
+      },
+      {
+        "to": 4035,
+        "distance_km": 2.791
+      },
+      {
+        "to": 4263,
+        "distance_km": 0.889
+      }
+    ],
+    "3120": [
+      {
+        "to": 3122,
+        "distance_km": 0.633
+      },
+      {
+        "to": 4035,
+        "distance_km": 0.532
+      },
+      {
+        "to": 4040,
+        "distance_km": 1.121
+      }
+    ],
+    "3122": [
+      {
+        "to": 3120,
+        "distance_km": 0.633
+      },
+      {
+        "to": 3127,
+        "distance_km": 1.2
+      }
+    ],
+    "3126": [
+      {
+        "to": 3127,
+        "distance_km": 1.835
+      },
+      {
+        "to": 3682,
+        "distance_km": 1.081
+      }
+    ],
+    "3127": [
+      {
+        "to": 3122,
+        "distance_km": 1.2
+      },
+      {
+        "to": 3126,
+        "distance_km": 1.835
+      },
+      {
+        "to": 4063,
+        "distance_km": 1.22
+      }
+    ],
+    "3180": [
+      {
+        "to": 4030,
+        "distance_km": 1.927
+      },
+      {
+        "to": 4051,
+        "distance_km": 1.266
+      },
+      {
+        "to": 4057,
+        "distance_km": 0.986
+      }
+    ],
+    "3662": [
+      {
+        "to": 2820,
+        "distance_km": 1.597
+      },
+      {
+        "to": 2846,
+        "distance_km": 6.405
+      },
+      {
+        "to": 3001,
+        "distance_km": 0.776
+      },
+      {
+        "to": 3002,
+        "distance_km": 0.695
+      },
+      {
+        "to": 4335,
+        "distance_km": 0.749
+      }
+    ],
+    "3682": [
+      {
+        "to": 2000,
+        "distance_km": 1.622
+      },
+      {
+        "to": 3126,
+        "distance_km": 1.081
+      },
+      {
+        "to": 3804,
+        "distance_km": 3.057
+      }
+    ],
+    "3685": [
+      {
+        "to": 970,
+        "distance_km": 1.398
+      },
+      {
+        "to": 2000,
+        "distance_km": 0.33
+      }
+    ],
+    "3804": [
+      {
+        "to": 3682,
+        "distance_km": 3.057
+      },
+      {
+        "to": 3812,
+        "distance_km": 0.448
+      },
+      {
+        "to": 4040,
+        "distance_km": 0.618
+      }
+    ],
+    "3812": [
+      {
+        "to": 3804,
+        "distance_km": 0.448
+      },
+      {
+        "to": 4040,
+        "distance_km": 0.701
+      }
+    ],
+    "4030": [
+      {
+        "to": 2825,
+        "distance_km": 0.97
+      },
+      {
+        "to": 2846,
+        "distance_km": 7.343
+      },
+      {
+        "to": 3180,
+        "distance_km": 1.927
+      },
+      {
+        "to": 4032,
+        "distance_km": 0.775
+      },
+      {
+        "to": 4051,
+        "distance_km": 0.692
+      },
+      {
+        "to": 4321,
+        "distance_km": 1.257
+      }
+    ],
+    "4032": [
+      {
+        "to": 4030,
+        "distance_km": 0.775
+      },
+      {
+        "to": 4034,
+        "distance_km": 1.074
+      },
+      {
+        "to": 4057,
+        "distance_km": 1.828
+      },
+      {
+        "to": 4321,
+        "distance_km": 1.076
+      }
+    ],
+    "4034": [
+      {
+        "to": 4032,
+        "distance_km": 1.074
+      },
+      {
+        "to": 4035,
+        "distance_km": 0.71
+      },
+      {
+        "to": 4063,
+        "distance_km": 1.831
+      },
+      {
+        "to": 4324,
+        "distance_km": 2.001
+      }
+    ],
+    "4035": [
+      {
+        "to": 3002,
+        "distance_km": 2.791
+      },
+      {
+        "to": 3120,
+        "distance_km": 0.532
+      },
+      {
+        "to": 4034,
+        "distance_km": 0.71
+      }
+    ],
+    "4040": [
+      {
+        "to": 3120,
+        "distance_km": 1.121
+      },
+      {
+        "to": 3804,
+        "distance_km": 0.618
+      },
+      {
+        "to": 3812,
+        "distance_km": 0.701
+      },
+      {
+        "to": 4043,
+        "distance_km": 1.608
+      },
+      {
+        "to": 4272,
+        "distance_km": 0.801
+      }
+    ],
+    "4043": [
+      {
+        "to": 2000,
+        "distance_km": 3.699
+      },
+      {
+        "to": 4040,
+        "distance_km": 1.608
+      },
+      {
+        "to": 4273,
+        "distance_km": 0.723
+      }
+    ],
+    "4051": [
+      {
+        "to": 2827,
+        "distance_km": 1.548
+      },
+      {
+        "to": 3180,
+        "distance_km": 1.266
+      },
+      {
+        "to": 4030,
+        "distance_km": 0.692
+      }
+    ],
+    "4057": [
+      {
+        "to": 3180,
+        "distance_km": 0.986
+      },
+      {
+        "to": 4032,
+        "distance_km": 1.828
+      },
+      {
+        "to": 4063,
+        "distance_km": 1.057
+      }
+    ],
+    "4063": [
+      {
+        "to": 3127,
+        "distance_km": 1.22
+      },
+      {
+        "to": 4034,
+        "distance_km": 1.831
+      },
+      {
+        "to": 4057,
+        "distance_km": 1.057
+      }
+    ],
+    "4262": [
+      {
+        "to": 2000,
+        "distance_km": 7.739
+      },
+      {
+        "to": 4263,
+        "distance_km": 0.888
+      }
+    ],
+    "4263": [
+      {
+        "to": 2000,
+        "distance_km": 6.885
+      },
+      {
+        "to": 3002,
+        "distance_km": 0.889
+      },
+      {
+        "to": 4262,
+        "distance_km": 0.888
+      },
+      {
+        "to": 4264,
+        "distance_km": 0.803
+      }
+    ],
+    "4264": [
+      {
+        "to": 2000,
+        "distance_km": 6.134
+      },
+      {
+        "to": 4263,
+        "distance_km": 0.803
+      },
+      {
+        "to": 4266,
+        "distance_km": 0.84
+      },
+      {
+        "to": 4270,
+        "distance_km": 0.689
+      },
+      {
+        "to": 4324,
+        "distance_km": 1.662
+      }
+    ],
+    "4266": [
+      {
+        "to": 2000,
+        "distance_km": 5.36
+      },
+      {
+        "to": 4264,
+        "distance_km": 0.84
+      }
+    ],
+    "4270": [
+      {
+        "to": 4264,
+        "distance_km": 0.689
+      },
+      {
+        "to": 4272,
+        "distance_km": 1.207
+      }
+    ],
+    "4272": [
+      {
+        "to": 4040,
+        "distance_km": 0.801
+      },
+      {
+        "to": 4270,
+        "distance_km": 1.207
+      },
+      {
+        "to": 4273,
+        "distance_km": 1.644
+      }
+    ],
+    "4273": [
+      {
+        "to": 4043,
+        "distance_km": 0.723
+      },
+      {
+        "to": 4272,
+        "distance_km": 1.644
+      }
+    ],
+    "4321": [
+      {
+        "to": 2846,
+        "distance_km": 6.767
+      },
+      {
+        "to": 3001,
+        "distance_km": 2.814
+      },
+      {
+        "to": 4030,
+        "distance_km": 1.257
+      },
+      {
+        "to": 4032,
+        "distance_km": 1.076
+      },
+      {
+        "to": 4335,
+        "distance_km": 1.357
+      }
+    ],
+    "4324": [
+      {
+        "to": 4034,
+        "distance_km": 2.001
+      },
+      {
+        "to": 4264,
+        "distance_km": 1.662
+      }
+    ],
+    "4335": [
+      {
+        "to": 2846,
+        "distance_km": 6.44
+      },
+      {
+        "to": 3001,
+        "distance_km": 1.475
+      },
+      {
+        "to": 3662,
+        "distance_km": 0.749
+      },
+      {
+        "to": 4321,
+        "distance_km": 1.357
+      }
+    ],
+    "4812": [],
+    "4821": []
+  }
+}

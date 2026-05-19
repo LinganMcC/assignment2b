@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.vscode/
+.idea/
+
+# Raw data (too big, everyone downloads from Canvas)
+data/raw/*.xls
+data/raw/*.xlsx
+data/raw/*.csv
+
+# Trained model weights (too big, regenerated)
+data/models/*.h5
+data/models/*.pkl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+venv/
+.venv/
