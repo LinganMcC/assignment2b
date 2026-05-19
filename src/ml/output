@@ -1,0 +1,217 @@
+C:\Users\Angel\Documents\GitHub\assignment2b\venv\Scripts\python.exe C:\Users\Angel\Documents\GitHub\assignment2b\src\ml\train.py --all
+Loading C:\Users\Angel\Documents\GitHub\assignment2b\data\processed\flow_timeseries.csv ...
+  Rows: 116,160   Sites: 40
+  Train days 1-22:  84,000 rows
+  Val   days 23-27: 17,280 rows
+  Test  days 28-31: 14,880 rows
+  Scaler saved → C:\Users\Angel\Documents\GitHub\assignment2b\data\processed\ml_artefacts\scaler.pkl
+Building sliding windows ...
+  Train: (83520, 12, 6)  Val: (16800, 12, 6)  Test: (14400, 12, 6)
+
+============================================================
+  Training: LSTM   device=cpu
+============================================================
+  Parameters: 51,777
+  Epoch   1/50  train_loss=0.0116  val_loss=0.0030  val_MAE=0.0404  lr=1.00e-03  [11.8s]
+    ✓ New best val MAE=0.0404  → saved lstm_best.pt
+  Epoch   2/50  train_loss=0.0037  val_loss=0.0027  val_MAE=0.0373  lr=1.00e-03  [15.9s]
+    ✓ New best val MAE=0.0373  → saved lstm_best.pt
+  Epoch   3/50  train_loss=0.0032  val_loss=0.0024  val_MAE=0.0350  lr=1.00e-03  [17.0s]
+    ✓ New best val MAE=0.0350  → saved lstm_best.pt
+  Epoch   4/50  train_loss=0.0029  val_loss=0.0022  val_MAE=0.0332  lr=1.00e-03  [9.1s]
+    ✓ New best val MAE=0.0332  → saved lstm_best.pt
+  Epoch   5/50  train_loss=0.0028  val_loss=0.0023  val_MAE=0.0338  lr=1.00e-03  [7.5s]
+  Epoch   6/50  train_loss=0.0027  val_loss=0.0022  val_MAE=0.0325  lr=1.00e-03  [9.7s]
+    ✓ New best val MAE=0.0325  → saved lstm_best.pt
+  Epoch   7/50  train_loss=0.0026  val_loss=0.0021  val_MAE=0.0322  lr=1.00e-03  [7.2s]
+    ✓ New best val MAE=0.0322  → saved lstm_best.pt
+  Epoch   8/50  train_loss=0.0025  val_loss=0.0022  val_MAE=0.0332  lr=1.00e-03  [8.5s]
+  Epoch   9/50  train_loss=0.0024  val_loss=0.0020  val_MAE=0.0314  lr=1.00e-03  [7.3s]
+    ✓ New best val MAE=0.0314  → saved lstm_best.pt
+  Epoch  10/50  train_loss=0.0024  val_loss=0.0020  val_MAE=0.0314  lr=1.00e-03  [8.7s]
+    ✓ New best val MAE=0.0314  → saved lstm_best.pt
+  Epoch  11/50  train_loss=0.0023  val_loss=0.0020  val_MAE=0.0324  lr=1.00e-03  [6.8s]
+  Epoch  12/50  train_loss=0.0023  val_loss=0.0020  val_MAE=0.0313  lr=1.00e-03  [8.5s]
+    ✓ New best val MAE=0.0313  → saved lstm_best.pt
+  Epoch  13/50  train_loss=0.0023  val_loss=0.0019  val_MAE=0.0305  lr=1.00e-03  [6.9s]
+    ✓ New best val MAE=0.0305  → saved lstm_best.pt
+  Epoch  14/50  train_loss=0.0023  val_loss=0.0019  val_MAE=0.0306  lr=1.00e-03  [8.9s]
+  Epoch  15/50  train_loss=0.0023  val_loss=0.0021  val_MAE=0.0340  lr=1.00e-03  [6.8s]
+  Epoch  16/50  train_loss=0.0022  val_loss=0.0020  val_MAE=0.0311  lr=1.00e-03  [6.9s]
+  Epoch  17/50  train_loss=0.0022  val_loss=0.0020  val_MAE=0.0330  lr=1.00e-03  [6.9s]
+  Epoch  18/50  train_loss=0.0022  val_loss=0.0020  val_MAE=0.0319  lr=5.00e-04  [6.8s]
+  Epoch  19/50  train_loss=0.0021  val_loss=0.0019  val_MAE=0.0301  lr=5.00e-04  [7.0s]
+    ✓ New best val MAE=0.0301  → saved lstm_best.pt
+  Epoch  20/50  train_loss=0.0021  val_loss=0.0019  val_MAE=0.0301  lr=5.00e-04  [8.5s]
+    ✓ New best val MAE=0.0301  → saved lstm_best.pt
+  Epoch  21/50  train_loss=0.0021  val_loss=0.0019  val_MAE=0.0302  lr=5.00e-04  [6.9s]
+  Epoch  22/50  train_loss=0.0021  val_loss=0.0019  val_MAE=0.0299  lr=5.00e-04  [8.6s]
+    ✓ New best val MAE=0.0299  → saved lstm_best.pt
+  Epoch  23/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0301  lr=5.00e-04  [7.0s]
+  Epoch  24/50  train_loss=0.0021  val_loss=0.0020  val_MAE=0.0313  lr=5.00e-04  [8.5s]
+  Epoch  25/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0299  lr=5.00e-04  [6.9s]
+    ✓ New best val MAE=0.0299  → saved lstm_best.pt
+  Epoch  26/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0306  lr=5.00e-04  [8.4s]
+  Epoch  27/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0296  lr=5.00e-04  [6.9s]
+    ✓ New best val MAE=0.0296  → saved lstm_best.pt
+  Epoch  28/50  train_loss=0.0021  val_loss=0.0019  val_MAE=0.0303  lr=5.00e-04  [9.0s]
+  Epoch  29/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0297  lr=5.00e-04  [9.9s]
+  Epoch  30/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0298  lr=5.00e-04  [9.9s]
+  Epoch  31/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0297  lr=5.00e-04  [8.1s]
+  Epoch  32/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0296  lr=5.00e-04  [7.5s]
+    ✓ New best val MAE=0.0296  → saved lstm_best.pt
+  Epoch  33/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0293  lr=5.00e-04  [9.9s]
+    ✓ New best val MAE=0.0293  → saved lstm_best.pt
+  Epoch  34/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0292  lr=5.00e-04  [9.2s]
+    ✓ New best val MAE=0.0292  → saved lstm_best.pt
+  Epoch  35/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0290  lr=5.00e-04  [8.6s]
+    ✓ New best val MAE=0.0290  → saved lstm_best.pt
+  Epoch  36/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0298  lr=5.00e-04  [9.3s]
+  Epoch  37/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0293  lr=5.00e-04  [7.6s]
+  Epoch  38/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0291  lr=5.00e-04  [6.8s]
+  Epoch  39/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0291  lr=2.50e-04  [7.0s]
+  Epoch  40/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0292  lr=2.50e-04  [7.4s]
+  Epoch  41/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0291  lr=2.50e-04  [8.7s]
+  Epoch  42/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0290  lr=2.50e-04  [8.2s]
+    ✓ New best val MAE=0.0290  → saved lstm_best.pt
+  Epoch  43/50  train_loss=0.0020  val_loss=0.0017  val_MAE=0.0290  lr=2.50e-04  [11.2s]
+    ✓ New best val MAE=0.0290  → saved lstm_best.pt
+  Epoch  44/50  train_loss=0.0020  val_loss=0.0017  val_MAE=0.0288  lr=2.50e-04  [7.1s]
+    ✓ New best val MAE=0.0288  → saved lstm_best.pt
+  Epoch  45/50  train_loss=0.0020  val_loss=0.0017  val_MAE=0.0288  lr=2.50e-04  [6.8s]
+  Epoch  46/50  train_loss=0.0020  val_loss=0.0017  val_MAE=0.0288  lr=2.50e-04  [6.8s]
+  Epoch  47/50  train_loss=0.0020  val_loss=0.0017  val_MAE=0.0289  lr=2.50e-04  [6.8s]
+  Epoch  48/50  train_loss=0.0020  val_loss=0.0017  val_MAE=0.0289  lr=2.50e-04  [7.2s]
+  Epoch  49/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0296  lr=1.25e-04  [6.7s]
+  Epoch  50/50  train_loss=0.0020  val_loss=0.0017  val_MAE=0.0288  lr=1.25e-04  [6.5s]
+  History saved → lstm_history.json
+
+  [LSTM] Test metrics:
+    test_MSE: 0.001666
+    test_MAE: 0.028206
+    test_RMSE: 0.040814
+    test_MAE_veh: 24.64
+
+============================================================
+  Training: GRU   device=cpu
+============================================================
+  Parameters: 38,849
+  Epoch   1/50  train_loss=0.0155  val_loss=0.0031  val_MAE=0.0412  lr=1.00e-03  [10.4s]
+    ✓ New best val MAE=0.0412  → saved gru_best.pt
+  Epoch   2/50  train_loss=0.0046  val_loss=0.0029  val_MAE=0.0392  lr=1.00e-03  [10.2s]
+    ✓ New best val MAE=0.0392  → saved gru_best.pt
+  Epoch   3/50  train_loss=0.0040  val_loss=0.0024  val_MAE=0.0352  lr=1.00e-03  [10.0s]
+    ✓ New best val MAE=0.0352  → saved gru_best.pt
+  Epoch   4/50  train_loss=0.0036  val_loss=0.0027  val_MAE=0.0383  lr=1.00e-03  [10.1s]
+  Epoch   5/50  train_loss=0.0033  val_loss=0.0022  val_MAE=0.0331  lr=1.00e-03  [10.1s]
+    ✓ New best val MAE=0.0331  → saved gru_best.pt
+  Epoch   6/50  train_loss=0.0031  val_loss=0.0021  val_MAE=0.0320  lr=1.00e-03  [10.0s]
+    ✓ New best val MAE=0.0320  → saved gru_best.pt
+  Epoch   7/50  train_loss=0.0029  val_loss=0.0020  val_MAE=0.0314  lr=1.00e-03  [11.2s]
+    ✓ New best val MAE=0.0314  → saved gru_best.pt
+  Epoch   8/50  train_loss=0.0028  val_loss=0.0022  val_MAE=0.0329  lr=1.00e-03  [11.3s]
+  Epoch   9/50  train_loss=0.0026  val_loss=0.0020  val_MAE=0.0317  lr=1.00e-03  [13.5s]
+  Epoch  10/50  train_loss=0.0026  val_loss=0.0020  val_MAE=0.0312  lr=1.00e-03  [10.8s]
+    ✓ New best val MAE=0.0312  → saved gru_best.pt
+  Epoch  11/50  train_loss=0.0025  val_loss=0.0020  val_MAE=0.0309  lr=1.00e-03  [12.4s]
+    ✓ New best val MAE=0.0309  → saved gru_best.pt
+  Epoch  12/50  train_loss=0.0024  val_loss=0.0020  val_MAE=0.0317  lr=1.00e-03  [13.0s]
+  Epoch  13/50  train_loss=0.0023  val_loss=0.0019  val_MAE=0.0307  lr=1.00e-03  [11.1s]
+    ✓ New best val MAE=0.0307  → saved gru_best.pt
+  Epoch  14/50  train_loss=0.0023  val_loss=0.0020  val_MAE=0.0322  lr=1.00e-03  [12.3s]
+  Epoch  15/50  train_loss=0.0023  val_loss=0.0019  val_MAE=0.0306  lr=1.00e-03  [10.7s]
+    ✓ New best val MAE=0.0306  → saved gru_best.pt
+  Epoch  16/50  train_loss=0.0023  val_loss=0.0019  val_MAE=0.0300  lr=1.00e-03  [11.6s]
+    ✓ New best val MAE=0.0300  → saved gru_best.pt
+  Epoch  17/50  train_loss=0.0022  val_loss=0.0019  val_MAE=0.0302  lr=1.00e-03  [11.4s]
+  Epoch  18/50  train_loss=0.0022  val_loss=0.0019  val_MAE=0.0303  lr=1.00e-03  [11.0s]
+  Epoch  19/50  train_loss=0.0022  val_loss=0.0019  val_MAE=0.0306  lr=1.00e-03  [11.0s]
+  Epoch  20/50  train_loss=0.0022  val_loss=0.0019  val_MAE=0.0302  lr=1.00e-03  [10.5s]
+  Epoch  21/50  train_loss=0.0022  val_loss=0.0022  val_MAE=0.0327  lr=1.00e-03  [10.8s]
+  Epoch  22/50  train_loss=0.0022  val_loss=0.0019  val_MAE=0.0306  lr=1.00e-03  [11.3s]
+  Epoch  23/50  train_loss=0.0022  val_loss=0.0019  val_MAE=0.0298  lr=1.00e-03  [11.6s]
+    ✓ New best val MAE=0.0298  → saved gru_best.pt
+  Epoch  24/50  train_loss=0.0022  val_loss=0.0019  val_MAE=0.0310  lr=1.00e-03  [10.9s]
+  Epoch  25/50  train_loss=0.0022  val_loss=0.0019  val_MAE=0.0302  lr=1.00e-03  [10.8s]
+  Epoch  26/50  train_loss=0.0021  val_loss=0.0019  val_MAE=0.0300  lr=1.00e-03  [10.6s]
+  Epoch  27/50  train_loss=0.0021  val_loss=0.0019  val_MAE=0.0299  lr=1.00e-03  [10.7s]
+  Epoch  28/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0298  lr=1.00e-03  [11.0s]
+    ✓ New best val MAE=0.0298  → saved gru_best.pt
+  Epoch  29/50  train_loss=0.0021  val_loss=0.0019  val_MAE=0.0322  lr=1.00e-03  [11.9s]
+  Epoch  30/50  train_loss=0.0021  val_loss=0.0020  val_MAE=0.0312  lr=1.00e-03  [11.6s]
+  Epoch  31/50  train_loss=0.0021  val_loss=0.0019  val_MAE=0.0309  lr=1.00e-03  [11.6s]
+  Epoch  32/50  train_loss=0.0021  val_loss=0.0019  val_MAE=0.0307  lr=5.00e-04  [13.3s]
+  Epoch  33/50  train_loss=0.0021  val_loss=0.0018  val_MAE=0.0292  lr=5.00e-04  [11.0s]
+    ✓ New best val MAE=0.0292  → saved gru_best.pt
+  Epoch  34/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0299  lr=5.00e-04  [11.7s]
+  Epoch  35/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0302  lr=5.00e-04  [11.0s]
+  Epoch  36/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0295  lr=5.00e-04  [11.0s]
+  Epoch  37/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0296  lr=2.50e-04  [10.9s]
+  Epoch  38/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0292  lr=2.50e-04  [10.6s]
+    ✓ New best val MAE=0.0292  → saved gru_best.pt
+  Epoch  39/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0295  lr=2.50e-04  [11.6s]
+  Epoch  40/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0292  lr=2.50e-04  [11.3s]
+    ✓ New best val MAE=0.0292  → saved gru_best.pt
+  Epoch  41/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0297  lr=2.50e-04  [11.3s]
+  Epoch  42/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0295  lr=1.25e-04  [10.2s]
+  Epoch  43/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0295  lr=1.25e-04  [10.1s]
+  Epoch  44/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0291  lr=1.25e-04  [10.2s]
+    ✓ New best val MAE=0.0291  → saved gru_best.pt
+  Epoch  45/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0292  lr=1.25e-04  [10.2s]
+  Epoch  46/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0293  lr=1.25e-04  [10.1s]
+  Epoch  47/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0290  lr=1.25e-04  [10.2s]
+    ✓ New best val MAE=0.0290  → saved gru_best.pt
+  Epoch  48/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0294  lr=1.25e-04  [10.1s]
+  Epoch  49/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0291  lr=1.25e-04  [10.2s]
+  Epoch  50/50  train_loss=0.0020  val_loss=0.0018  val_MAE=0.0294  lr=1.25e-04  [10.2s]
+  History saved → gru_history.json
+
+  [GRU] Test metrics:
+    test_MSE: 0.001637
+    test_MAE: 0.027882
+    test_RMSE: 0.040462
+    test_MAE_veh: 24.37
+
+============================================================
+  Training: TRANSFORMER   device=cpu
+============================================================
+C:\Users\Angel\Documents\GitHub\assignment2b\src\ml\models.py:171: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+  Parameters: 69,505
+  Epoch   1/50  train_loss=0.0101  val_loss=0.0038  val_MAE=0.0472  lr=1.00e-03  [21.0s]
+    ✓ New best val MAE=0.0472  → saved transformer_best.pt
+  Epoch   2/50  train_loss=0.0042  val_loss=0.0031  val_MAE=0.0424  lr=1.00e-03  [21.6s]
+    ✓ New best val MAE=0.0424  → saved transformer_best.pt
+  Epoch   3/50  train_loss=0.0035  val_loss=0.0029  val_MAE=0.0424  lr=1.00e-03  [20.9s]
+    ✓ New best val MAE=0.0424  → saved transformer_best.pt
+  Epoch   4/50  train_loss=0.0033  val_loss=0.0023  val_MAE=0.0337  lr=1.00e-03  [20.8s]
+    ✓ New best val MAE=0.0337  → saved transformer_best.pt
+  Epoch   5/50  train_loss=0.0031  val_loss=0.0021  val_MAE=0.0324  lr=1.00e-03  [20.7s]
+    ✓ New best val MAE=0.0324  → saved transformer_best.pt
+  Epoch   6/50  train_loss=0.0029  val_loss=0.0022  val_MAE=0.0332  lr=1.00e-03  [20.8s]
+  Epoch   7/50  train_loss=0.0028  val_loss=0.0025  val_MAE=0.0364  lr=1.00e-03  [20.6s]
+  Epoch   8/50  train_loss=0.0027  val_loss=0.0022  val_MAE=0.0327  lr=1.00e-03  [20.7s]
+  Epoch   9/50  train_loss=0.0026  val_loss=0.0023  val_MAE=0.0364  lr=5.00e-04  [21.1s]
+  Epoch  10/50  train_loss=0.0025  val_loss=0.0024  val_MAE=0.0352  lr=5.00e-04  [20.7s]
+  Epoch  11/50  train_loss=0.0025  val_loss=0.0021  val_MAE=0.0326  lr=5.00e-04  [20.6s]
+  Epoch  12/50  train_loss=0.0024  val_loss=0.0024  val_MAE=0.0347  lr=5.00e-04  [21.0s]
+  Early stopping after 12 epochs (patience=7)
+  History saved → transformer_history.json
+
+  [TRANSFORMER] Test metrics:
+    test_MSE: 0.001994
+    test_MAE: 0.031798
+    test_RMSE: 0.044657
+    test_MAE_veh: 27.68
+
+All results saved → C:\Users\Angel\Documents\GitHub\assignment2b\data\processed\ml_artefacts\results.json
+
+{'─'*55}
+Model            MAE (norm)  RMSE (norm)   MAE (veh)
+────────────────────────────────────────────────────
+lstm                 0.0282       0.0408       24.6
+gru                  0.0279       0.0405       24.4
+transformer          0.0318       0.0447       27.7
+────────────────────────────────────────────────────
+
+Process finished with exit code 0

@@ -1,0 +1,23 @@
+[
+  {
+    "model": "lstm",
+    "test_MSE": 0.001666,
+    "test_MAE": 0.028206,
+    "test_RMSE": 0.040814,
+    "test_MAE_veh": 24.64
+  },
+  {
+    "model": "gru",
+    "test_MSE": 0.001637,
+    "test_MAE": 0.027882,
+    "test_RMSE": 0.040462,
+    "test_MAE_veh": 24.37
+  },
+  {
+    "model": "transformer",
+    "test_MSE": 0.001994,
+    "test_MAE": 0.031798,
+    "test_RMSE": 0.044657,
+    "test_MAE_veh": 27.68
+  }
+]
