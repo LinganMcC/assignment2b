@@ -1,31 +1,19 @@
 """
 dataset.py  –  Build windowed sequences from flow_timeseries.csv for model training.
 
-Schema expected from parse_scats.py  (INTERFACES.md interface 1):
+Schema expected from parse_scats.py
     site_id  | datetime            | flow
     int      | YYYY-MM-DD HH:MM:SS | int
-
-Design decisions
-----------------
-- **Global model** (one model, all sites).
-  Rationale: ~75 sites × 31 days × 96 intervals = ~220 k rows.  Per-site gives
-  only ~2 900 rows each — far too few for a reliable held-out test set once you
-  subtract a validation month.  A global model also generalises to unseen sites
-  and is easier to maintain.  Trade-off acknowledged in DECISIONS.md.
 
 - **Input features per timestep** (window_size steps, default 12 = 3 hours):
       flow_norm   – MinMax-scaled flow for the site
       hour_sin/cos  – cyclic encoding of hour-of-day
       dow_sin/cos   – cyclic encoding of day-of-week
       is_weekend    – binary flag
-
-- **Target**: flow_norm at the next timestep (single-step ahead prediction).
-  Multi-step extension is straightforward by stacking targets.
-
-- **Split**: chronological  (no leakage)
-      train  : days  1-22   (~70 %)
-      val    : days 23-27   (~15 %)
-      test   : days 28-31   (~15 %)
+\
+      train  : days  1-22
+      val    : days 23-27
+      test   : days 28-31
 """
 
 from __future__ import annotations
@@ -48,12 +36,12 @@ TRAIN_END   = 22      # last day (of month) included in train
 VAL_END     = 27      # last day included in val  (28-31 → test)
 
 
-# ═══════════════════════════════════════════════════════════════════════════
+
 # Feature engineering
-# ═══════════════════════════════════════════════════════════════════════════
+
 
 def _cyclic(val: pd.Series, period: float) -> tuple[pd.Series, pd.Series]:
-    """Encode a periodic variable as (sin, cos) to avoid 0/23-hour discontinuity."""
+    """Encode a periodic variable as (sin, cos) to avoid discontinuity."""
     angle = 2 * np.pi * val / period
     return np.sin(angle), np.cos(angle)
 
@@ -62,7 +50,7 @@ def add_time_features(df: pd.DataFrame) -> pd.DataFrame:
     """Add hour/dow cyclic + weekend flag columns in-place. Returns df."""
     dt = pd.to_datetime(df["datetime"])
     hour = dt.dt.hour + dt.dt.minute / 60.0
-    dow  = dt.dt.dayofweek          # 0=Mon … 6=Sun
+    dow  = dt.dt.dayofweek          # 0=Mon 6=Sun
 
     df["hour_sin"], df["hour_cos"] = _cyclic(hour, 24.0)
     df["dow_sin"],  df["dow_cos"]  = _cyclic(dow, 7.0)
@@ -70,9 +58,8 @@ def add_time_features(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-# ═══════════════════════════════════════════════════════════════════════════
-# Normalisation  (per-site MinMax, fit on train split only)
-# ═══════════════════════════════════════════════════════════════════════════
+
+# Normalisation
 
 class SiteScaler:
     """Per-site MinMax scaler for the 'flow' column.

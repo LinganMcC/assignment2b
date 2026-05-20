@@ -44,11 +44,11 @@ class LSTMModel(nn.Module):
     """
 
     def __init__(
-        self,
-        n_features: int = 6,
-        hidden_size: int = 64,
-        num_layers: int = 2,
-        dropout: float = 0.2,
+            self,
+            n_features: int = 6,
+            hidden_size: int = 64,
+            num_layers: int = 2,
+            dropout: float = 0.2,
     ) -> None:
         super().__init__()
         self.lstm = nn.LSTM(
@@ -63,14 +63,13 @@ class LSTMModel(nn.Module):
 
     def forward(self, x: Tensor) -> Tensor:
         # x: (B, T, F)
-        out, _ = self.lstm(x)          # out: (B, T, H)
-        last   = out[:, -1, :]         # take final timestep
-        return self.head(self.dropout(last))   # (B, 1)
+        out, _ = self.lstm(x)  # out: (B, T, H)
+        last = out[:, -1, :]  # take final timestep
+        return self.head(self.dropout(last))  # (B, 1)
 
 
-# ═══════════════════════════════════════════════════════════════════════════
+#
 # 2. GRU
-# ═══════════════════════════════════════════════════════════════════════════
 
 class GRUModel(nn.Module):
     """Two-layer stacked GRU → linear output.
@@ -81,11 +80,11 @@ class GRUModel(nn.Module):
     """
 
     def __init__(
-        self,
-        n_features: int = 6,
-        hidden_size: int = 64,
-        num_layers: int = 2,
-        dropout: float = 0.2,
+            self,
+            n_features: int = 6,
+            hidden_size: int = 64,
+            num_layers: int = 2,
+            dropout: float = 0.2,
     ) -> None:
         super().__init__()
         self.gru = nn.GRU(
@@ -100,13 +99,12 @@ class GRUModel(nn.Module):
 
     def forward(self, x: Tensor) -> Tensor:
         out, _ = self.gru(x)
-        last   = out[:, -1, :]
+        last = out[:, -1, :]
         return self.head(self.dropout(last))
 
 
-# ═══════════════════════════════════════════════════════════════════════════
 # 3. Transformer
-# ═══════════════════════════════════════════════════════════════════════════
+
 
 class _PositionalEncoding(nn.Module):
     """Standard sinusoidal positional encoding (Vaswani et al., 2017)."""
@@ -146,19 +144,19 @@ class TransformerModel(nn.Module):
     """
 
     def __init__(
-        self,
-        n_features: int = 6,
-        d_model: int = 64,
-        nhead: int = 4,
-        num_layers: int = 2,
-        dim_feedforward: int = 128,
-        dropout: float = 0.1,
+            self,
+            n_features: int = 6,
+            d_model: int = 64,
+            nhead: int = 4,
+            num_layers: int = 2,
+            dim_feedforward: int = 128,
+            dropout: float = 0.1,
     ) -> None:
         super().__init__()
         assert d_model % nhead == 0, "d_model must be divisible by nhead"
 
         self.input_proj = nn.Linear(n_features, d_model)
-        self.pos_enc    = _PositionalEncoding(d_model, dropout=dropout)
+        self.pos_enc = _PositionalEncoding(d_model, dropout=dropout)
 
         encoder_layer = nn.TransformerEncoderLayer(
             d_model=d_model,
@@ -166,7 +164,7 @@ class TransformerModel(nn.Module):
             dim_feedforward=dim_feedforward,
             dropout=dropout,
             batch_first=True,
-            norm_first=True,   # Pre-LN: more stable training
+            norm_first=True,  # Pre-LN: more stable training
         )
         self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
 
@@ -179,19 +177,19 @@ class TransformerModel(nn.Module):
 
     def forward(self, x: Tensor) -> Tensor:
         # x: (B, T, F)
-        z = self.pos_enc(self.input_proj(x))   # (B, T, d_model)
-        z = self.encoder(z)                    # (B, T, d_model)
-        z = z.mean(dim=1)                      # global avg pool → (B, d_model)
-        return self.head(z)                    # (B, 1)
+        z = self.pos_enc(self.input_proj(x))  # (B, T, d_model)
+        z = self.encoder(z)  # (B, T, d_model)
+        z = z.mean(dim=1)  # global avg pool → (B, d_model)
+        return self.head(z)  # (B, 1)
 
 
-# ═══════════════════════════════════════════════════════════════════════════
+
 # Factory
-# ═══════════════════════════════════════════════════════════════════════════
+
 
 MODEL_REGISTRY: dict[str, type] = {
-    "lstm":        LSTMModel,
-    "gru":         GRUModel,
+    "lstm": LSTMModel,
+    "gru": GRUModel,
     "transformer": TransformerModel,
 }
 
@@ -209,7 +207,6 @@ def build_model(name: str, n_features: int = 6, **kwargs) -> nn.Module:
 
 
 if __name__ == "__main__":
-    # Smoke-test all three models
     B, T, F = 8, 12, 6
     x = torch.randn(B, T, F)
     for name in MODEL_REGISTRY:
