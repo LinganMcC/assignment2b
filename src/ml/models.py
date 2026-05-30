@@ -68,7 +68,7 @@ class LSTMModel(nn.Module):
         return self.head(self.dropout(last))  # (B, 1)
 
 
-#
+
 # 2. GRU
 
 class GRUModel(nn.Module):
@@ -177,10 +177,10 @@ class TransformerModel(nn.Module):
 
     def forward(self, x: Tensor) -> Tensor:
         # x: (B, T, F)
-        z = self.pos_enc(self.input_proj(x))  # (B, T, d_model)
-        z = self.encoder(z)  # (B, T, d_model)
-        z = z.mean(dim=1)  # global avg pool → (B, d_model)
-        return self.head(z)  # (B, 1)
+        z = self.pos_enc(self.input_proj(x))
+        z = self.encoder(z)
+        z = z.mean(dim=1)
+        return self.head(z)
 
 
 

@@ -1,25 +1,11 @@
-"""
-evaluate.py  –  Load all trained models, run test-set evaluation, and produce
-                a comparison report + diagnostic plots.
-
-Outputs (in data/processed/ml_artefacts/):
-    results.json          – MAE / RMSE / MAPE per model
-    plots/
-        training_curves.png   – loss curves for all three models
-        prediction_sample.png – actual vs predicted for a random site on test day
-        model_comparison.png  – bar chart of test MAE (vehicles)
-
-Usage:
-    python -m src.ml.evaluate
-"""
 
 from __future__ import annotations
 
 import json
-from pathlib import Path
+
 
 import numpy as np
-import pandas as pd
+
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 
@@ -30,9 +16,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 PLOTS_DIR = ARTEFACTS_DIR / "plots"
 
 
-# ═══════════════════════════════════════════════════════════════════════════
-# Metric helpers
-# ═══════════════════════════════════════════════════════════════════════════
+
 
 def compute_metrics(preds: np.ndarray, targets: np.ndarray) -> dict:
     mae  = float(np.mean(np.abs(preds - targets)))
@@ -67,9 +51,7 @@ def run_inference(model_name: str, datasets: dict, batch_size: int = 512) -> tup
     return np.concatenate(preds).squeeze(), np.concatenate(tgts).squeeze()
 
 
-# ═══════════════════════════════════════════════════════════════════════════
-# Plotting  (matplotlib — only imported if available)
-# ═══════════════════════════════════════════════════════════════════════════
+
 
 def _try_import_matplotlib():
     try:
@@ -172,9 +154,6 @@ def plot_model_comparison(plt, results: list[dict]) -> None:
     print(f"  Saved {out}")
 
 
-# ═══════════════════════════════════════════════════════════════════════════
-# Main
-# ═══════════════════════════════════════════════════════════════════════════
 
 def main() -> None:
     PLOTS_DIR.mkdir(parents=True, exist_ok=True)

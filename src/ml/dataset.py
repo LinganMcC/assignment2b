@@ -10,7 +10,7 @@ Schema expected from parse_scats.py
       hour_sin/cos  – cyclic encoding of hour-of-day
       dow_sin/cos   – cyclic encoding of day-of-week
       is_weekend    – binary flag
-\
+
       train  : days  1-22
       val    : days 23-27
       test   : days 28-31
