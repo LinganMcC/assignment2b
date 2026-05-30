@@ -199,8 +199,13 @@ class RouteFinder(tk.Tk):
         with open(root / "data/processed/boroondara_graph.json") as f:
             self.graph_data = json.load(f)
 
+        import re as _re
+        def _short_name(name: str) -> str:
+            """Strip directional cross-street suffix, e.g. 'BULLEEN_RD N of THOMPSONS_RD' → 'BULLEEN_RD'."""
+            return _re.split(r'\s+(?:N|S|E|W|NE|NW|SE|SW|OF)\s+', name, flags=_re.IGNORECASE)[0].strip()
+
         self._site_opts = [
-            f"{r.site_id}  –  {r['name'][:32]}"
+            f"{r.site_id}  –  {_short_name(r['name'])}"
             for _, r in self.sites.iterrows()
         ]
         self._site_ids = [int(r.site_id) for _, r in self.sites.iterrows()]
