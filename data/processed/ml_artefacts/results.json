@@ -1,23 +1,26 @@
 [
   {
     "model": "lstm",
-    "test_MSE": 0.001666,
-    "test_MAE": 0.028206,
-    "test_RMSE": 0.040814,
-    "test_MAE_veh": 24.64
+    "test_MAE": 0.0282,
+    "test_RMSE": 0.0408,
+    "test_MAPE_%": 22.56,
+    "test_MAE_veh": 24.6406,
+    "test_RMSE_veh": 38.6049
   },
   {
     "model": "gru",
-    "test_MSE": 0.001637,
-    "test_MAE": 0.027882,
-    "test_RMSE": 0.040462,
-    "test_MAE_veh": 24.37
+    "test_MAE": 0.0279,
+    "test_RMSE": 0.0405,
+    "test_MAPE_%": 21.83,
+    "test_MAE_veh": 24.3672,
+    "test_RMSE_veh": 38.2496
   },
   {
     "model": "transformer",
-    "test_MSE": 0.001994,
-    "test_MAE": 0.031798,
-    "test_RMSE": 0.044657,
-    "test_MAE_veh": 27.68
+    "test_MAE": 0.0318,
+    "test_RMSE": 0.0447,
+    "test_MAPE_%": 23.31,
+    "test_MAE_veh": 27.6839,
+    "test_RMSE_veh": 41.7905
   }
 ]
