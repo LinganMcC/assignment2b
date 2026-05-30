@@ -242,11 +242,11 @@ class RouteFinder(tk.Tk):
 
     def _build_controls(self, lp):
         section_label(lp, "Origin")
-        self._rt_origin = tk.StringVar(value=self._site_opts[3])
+        self._rt_origin = tk.StringVar(value=self._site_opts[5])  # 2827 – NW corner
         combo(lp, self._rt_origin, self._site_opts)
 
         section_label(lp, "Destination")
-        self._rt_dest = tk.StringVar(value=self._site_opts[1])
+        self._rt_dest = tk.StringVar(value=self._site_opts[34])  # 4273 – SE corner
         combo(lp, self._rt_dest, self._site_opts)
 
         section_label(lp, "Date & Time")
