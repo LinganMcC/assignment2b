@@ -27,9 +27,9 @@ from partA.algorithms.cus2 import CUS2
 
 GRAPH_FILE = PROJECT_ROOT / "data" / "processed" / "boroondara_graph.json"
 
-FLOW_CAPACITY = 1500.0
+FLOW_CAPACITY = 400.0
 SPEED_CAPACITY = 32.0
-SPEED_LIMIT = 60.0
+SPEED_LIMIT = 60.0   
 SPEED_MIN = 1.0
 INTERSECTION_DELAY_S = 30.0
 
@@ -65,39 +65,28 @@ class Route:
         )
 
 
-def flow_to_speed(flow_veh_per_hour: float) -> float:
-    q = max(0.0, float(flow_veh_per_hour))
+def flow_to_speed(flow_veh_per_15min: float) -> float:
+    q = max(0.0, min(float(flow_veh_per_15min), FLOW_CAPACITY))
 
     discriminant = _B2 + 4.0 * _A * q
-
     if discriminant < 0:
-        return SPEED_MIN
+        return SPEED_CAPACITY
 
     sqrt_d = math.sqrt(discriminant)
-
-    if q <= FLOW_CAPACITY:
-        speed = (-_B - sqrt_d) / (2.0 * _A)
-    else:
-        speed = (-_B + sqrt_d) / (2.0 * _A)
-
+    speed = (-_B - sqrt_d) / (2.0 * _A)
     return max(SPEED_MIN, min(speed, SPEED_LIMIT))
 
 
 def edge_travel_time_s(distance_km: float, flow_veh_per_15min: int) -> float:
-    flow_hourly = flow_veh_per_15min * 4.0
-    speed_kmh = flow_to_speed(flow_hourly)
+    speed_kmh = flow_to_speed(flow_veh_per_15min)
     return (distance_km / speed_kmh) * 3600.0 + INTERSECTION_DELAY_S
 
 
 def get_predict_function():
-    import sys
-
     if str(SRC_ROOT) not in sys.path:
         sys.path.insert(0, str(SRC_ROOT))
-
     if str(SRC_ROOT / "ml") not in sys.path:
         sys.path.insert(0, str(SRC_ROOT / "ml"))
-
     from ml.predict import predict
     return predict
 
@@ -123,9 +112,7 @@ def build_parta_graph(
 
     for node_id, info in data["nodes"].items():
         sid = int(node_id)
-        lon = float(info["lon"])
-        lat = float(info["lat"])
-        graph.nodes[sid] = (lon, lat)
+        graph.nodes[sid] = (float(info["lon"]), float(info["lat"]))
 
     pred = predict_fn or get_predict_function()
     flow_cache: dict[int, int] = {}
@@ -134,7 +121,7 @@ def build_parta_graph(
     def get_flow(site_id: int) -> int:
         if site_id not in flow_cache:
             try:
-                flow_cache[site_id] = int(pred(site_id, datetime_str, model))
+                flow_cache[site_id] = max(0, int(pred(site_id, datetime_str, model)))
             except Exception:
                 flow_cache[site_id] = 0
         return flow_cache[site_id]
@@ -142,13 +129,11 @@ def build_parta_graph(
     for from_id, edge_list in data["edges"].items():
         u = int(from_id)
         graph.edges[u] = []
-
         for edge in edge_list:
             v = int(edge["to"])
             distance_km = float(edge["distance_km"])
             flow = get_flow(u)
             cost = edge_travel_time_s(distance_km, flow)
-
             graph.edges[u].append((v, cost))
             distance_lookup[(u, v)] = distance_km
 
@@ -159,8 +144,6 @@ def build_parta_graph(
 
 
 def run_algorithm(graph: Graph, algorithm: str):
-    algorithm = algorithm.lower()
-
     algorithms = {
         "astar": AStar,
         "bfs": BFS,
@@ -169,12 +152,10 @@ def run_algorithm(graph: Graph, algorithm: str):
         "cus1": CUS1,
         "cus2": CUS2,
     }
-
-    if algorithm not in algorithms:
+    alg = algorithm.lower()
+    if alg not in algorithms:
         raise ValueError(f"Invalid algorithm: {algorithm}")
-
-    searcher = algorithms[algorithm](graph)
-    return searcher.search()
+    return algorithms[alg](graph).search()
 
 
 def build_route(
@@ -190,15 +171,11 @@ def build_route(
     speeds_kmh = []
 
     for i in range(len(path) - 1):
-        u = path[i]
-        v = path[i + 1]
-
+        u, v = path[i], path[i + 1]
         distance_km = distance_lookup.get((u, v), 0.0)
         flow_15min = flow_cache.get(u, 0)
-
-        speed = flow_to_speed(flow_15min * 4.0)
+        speed = flow_to_speed(flow_15min)
         time_s = edge_travel_time_s(distance_km, flow_15min)
-
         edges_km.append(distance_km)
         speeds_kmh.append(speed)
         total_time_s += time_s
@@ -230,12 +207,9 @@ def find_routes(
         model=model,
         predict_fn=predict_fn,
     )
-
     goal, nodes_created, path = run_algorithm(graph, algorithm)
-
     if not path:
         return []
-
     route = build_route(
         path=path,
         goal=goal,
@@ -244,7 +218,6 @@ def find_routes(
         distance_lookup=distance_lookup,
         flow_cache=flow_cache,
     )
-
     return [route]
 
 
@@ -256,13 +229,8 @@ if __name__ == "__main__":
     parser.add_argument("--dest", type=int, default=2200)
     parser.add_argument("--datetime", type=str, default="2006-10-15 08:30:00")
     parser.add_argument("--model", type=str, default="gru", choices=["lstm", "gru", "transformer"])
-    parser.add_argument(
-        "--algorithm",
-        type=str,
-        default="astar",
-        choices=["astar", "bfs", "dfs", "gbfs", "cus1", "cus2"],
-    )
-
+    parser.add_argument("--algorithm", type=str, default="astar",
+                        choices=["astar", "bfs", "dfs", "gbfs", "cus1", "cus2"])
     args = parser.parse_args()
 
     routes = find_routes(
