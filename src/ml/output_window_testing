@@ -1,0 +1,147 @@
+C:\Users\Angel\Documents\GitHub\assignment2b\venv\Scripts\python.exe C:\Users\Angel\Documents\GitHub\assignment2b\src\ml\experiment_window_size.py
+=================================================================
+  Window-Size Experiment
+  Windows : [4, 8, 12, 16, 24, 32, 48]
+  Models  : ['lstm', 'gru', 'transformer']
+  Device  : cpu
+=================================================================
+Loading C:\Users\Angel\Documents\GitHub\assignment2b\data\processed\flow_timeseries.csv ...
+  Rows: 116,160   Sites: 40
+  Train days 1-22:  84,000 rows
+  Val   days 23-27: 17,280 rows
+  Test  days 28-31: 14,880 rows
+  Scaler saved → C:\Users\Angel\Documents\GitHub\assignment2b\data\processed\ml_artefacts\scaler.pkl
+Building sliding windows ...
+  Train: (83520, 12, 6)  Val: (16800, 12, 6)  Test: (14400, 12, 6)
+
+Caching normalised splits ...
+  Done.
+
+
+─────────────────────────────────────────────────────────────────
+  WINDOW SIZE = 4  (60 min look-back)
+─────────────────────────────────────────────────────────────────
+  Shapes — train:(83840, 4, 6)  val:(17120, 4, 6)  test:(14720, 4, 6)
+
+  [LSTM]  window=4
+    epochs=50  MAE(norm)=0.0279  RMSE(norm)=0.0410  MAPE=21.2%  MAE(veh)=24.4  time=189.2s
+
+  [GRU]  window=4
+    epochs=28  MAE(norm)=0.0286  RMSE(norm)=0.0417  MAPE=20.1%  MAE(veh)=25.0  time=123.4s
+
+  [TRANSFORMER]  window=4
+C:\Users\Angel\Documents\GitHub\assignment2b\src\ml\models.py:169: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+    epochs=19  MAE(norm)=0.0293  RMSE(norm)=0.0422  MAPE=26.3%  MAE(veh)=25.6  time=168.8s
+
+─────────────────────────────────────────────────────────────────
+  WINDOW SIZE = 8  (120 min look-back)
+─────────────────────────────────────────────────────────────────
+  Shapes — train:(83680, 8, 6)  val:(16960, 8, 6)  test:(14560, 8, 6)
+
+  [LSTM]  window=8
+    epochs=50  MAE(norm)=0.0279  RMSE(norm)=0.0406  MAPE=20.3%  MAE(veh)=24.3  time=253.2s
+
+  [GRU]  window=8
+    epochs=32  MAE(norm)=0.0281  RMSE(norm)=0.0410  MAPE=20.9%  MAE(veh)=24.5  time=219.5s
+
+  [TRANSFORMER]  window=8
+    epochs=19  MAE(norm)=0.0287  RMSE(norm)=0.0415  MAPE=25.9%  MAE(veh)=25.1  time=263.6s
+
+─────────────────────────────────────────────────────────────────
+  WINDOW SIZE = 12  (180 min look-back)
+─────────────────────────────────────────────────────────────────
+  Shapes — train:(83520, 12, 6)  val:(16800, 12, 6)  test:(14400, 12, 6)
+
+  [LSTM]  window=12
+    epochs=50  MAE(norm)=0.0282  RMSE(norm)=0.0408  MAPE=22.6%  MAE(veh)=24.6  time=316.1s
+
+  [GRU]  window=12
+    epochs=30  MAE(norm)=0.0284  RMSE(norm)=0.0414  MAPE=19.8%  MAE(veh)=24.8  time=279.1s
+
+  [TRANSFORMER]  window=12
+    epochs=32  MAE(norm)=0.0293  RMSE(norm)=0.0421  MAPE=24.3%  MAE(veh)=25.6  time=622.7s
+
+─────────────────────────────────────────────────────────────────
+  WINDOW SIZE = 16  (240 min look-back)
+─────────────────────────────────────────────────────────────────
+  Shapes — train:(83360, 16, 6)  val:(16640, 16, 6)  test:(14240, 16, 6)
+
+  [LSTM]  window=16
+    epochs=50  MAE(norm)=0.0281  RMSE(norm)=0.0405  MAPE=22.0%  MAE(veh)=24.6  time=391.4s
+
+  [GRU]  window=16
+    epochs=50  MAE(norm)=0.0281  RMSE(norm)=0.0407  MAPE=22.1%  MAE(veh)=24.5  time=575.7s
+
+  [TRANSFORMER]  window=16
+    epochs=50  MAE(norm)=0.0290  RMSE(norm)=0.0416  MAPE=23.1%  MAE(veh)=25.3  time=1280.6s
+
+─────────────────────────────────────────────────────────────────
+  WINDOW SIZE = 24  (360 min look-back)
+─────────────────────────────────────────────────────────────────
+  Shapes — train:(83040, 24, 6)  val:(16320, 24, 6)  test:(13920, 24, 6)
+
+  [LSTM]  window=24
+    epochs=50  MAE(norm)=0.0282  RMSE(norm)=0.0405  MAPE=22.5%  MAE(veh)=24.7  time=476.7s
+
+  [GRU]  window=24
+    epochs=50  MAE(norm)=0.0284  RMSE(norm)=0.0410  MAPE=22.5%  MAE(veh)=24.8  time=819.3s
+
+  [TRANSFORMER]  window=24
+    epochs=31  MAE(norm)=0.0302  RMSE(norm)=0.0428  MAPE=24.1%  MAE(veh)=26.4  time=1140.0s
+
+─────────────────────────────────────────────────────────────────
+  WINDOW SIZE = 32  (480 min look-back)
+─────────────────────────────────────────────────────────────────
+  Shapes — train:(82720, 32, 6)  val:(16000, 32, 6)  test:(13600, 32, 6)
+
+  [LSTM]  window=32
+    epochs=50  MAE(norm)=0.0283  RMSE(norm)=0.0409  MAPE=20.7%  MAE(veh)=24.7  time=603.9s
+
+  [GRU]  window=32
+    epochs=50  MAE(norm)=0.0287  RMSE(norm)=0.0415  MAPE=22.2%  MAE(veh)=25.0  time=1058.0s
+
+  [TRANSFORMER]  window=32
+    epochs=50  MAE(norm)=0.0296  RMSE(norm)=0.0421  MAPE=25.5%  MAE(veh)=25.8  time=2985.8s
+
+─────────────────────────────────────────────────────────────────
+  WINDOW SIZE = 48  (720 min look-back)
+─────────────────────────────────────────────────────────────────
+  Shapes — train:(82080, 48, 6)  val:(15360, 48, 6)  test:(12960, 48, 6)
+
+  [LSTM]  window=48
+    epochs=50  MAE(norm)=0.0279  RMSE(norm)=0.0403  MAPE=23.4%  MAE(veh)=24.4  time=1176.9s
+
+  [GRU]  window=48
+    epochs=50  MAE(norm)=0.0283  RMSE(norm)=0.0409  MAPE=20.4%  MAE(veh)=24.6  time=2221.8s
+
+  [TRANSFORMER]  window=48
+    epochs=36  MAE(norm)=0.0290  RMSE(norm)=0.0414  MAPE=23.0%  MAE(veh)=25.3  time=3446.2s
+
+  Results saved → C:\Users\Angel\Documents\GitHub\assignment2b\data\processed\ml_artefacts\window_experiment\results.json
+  Results saved → C:\Users\Angel\Documents\GitHub\assignment2b\data\processed\ml_artefacts\window_experiment\results.csv
+  matplotlib not installed — skipping plots
+
+═══════════════════════════════════════════════════════════════════════════
+  WINDOW-SIZE EXPERIMENT — SUMMARY (Test MAE normalised)
+═══════════════════════════════════════════════════════════════════════════
+  Window   LB(min)           LSTM            GRU    TRANSFORMER
+───────────────────────────────────────────────────────────────────────────
+       4        60   0.0279 ( 24.4)   0.0286 ( 25.0)   0.0293 ( 25.6)
+       8       120   0.0279 ( 24.3)   0.0281 ( 24.5)   0.0287 ( 25.1)
+      12       180   0.0282 ( 24.6)   0.0284 ( 24.8)   0.0293 ( 25.6)
+      16       240   0.0281 ( 24.6)   0.0281 ( 24.5)   0.0290 ( 25.3)
+      24       360   0.0282 ( 24.7)   0.0284 ( 24.8)   0.0302 ( 26.4)
+      32       480   0.0283 ( 24.7)   0.0287 ( 25.0)   0.0296 ( 25.8)
+      48       720   0.0279 ( 24.4)   0.0283 ( 24.6)   0.0290 ( 25.3)
+───────────────────────────────────────────────────────────────────────────
+  Values shown as MAE_norm (MAE_vehicles)
+
+  Best window per model:
+    LSTM         → W= 4 (60 min)  MAE=0.0279  MAE_veh=24.4
+    GRU          → W= 8 (120 min)  MAE=0.0281  MAE_veh=24.5
+    TRANSFORMER  → W= 8 (120 min)  MAE=0.0287  MAE_veh=25.1
+═══════════════════════════════════════════════════════════════════════════
+
+
+Process finished with exit code 0
