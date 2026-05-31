@@ -1,29 +1,3 @@
-"""
-Parse the raw SCATS October 2006 spreadsheet into a tidy time-series CSV.
-
-OWNER: Person A
-
-Input:  data/raw/Scats_Data_October_2006.xls
-Output: data/processed/flow_timeseries.csv  (per INTERFACES.md interface 1)
-        data/processed/site_locations.csv   (one canonical lat/lon per site)
-
-Usage:
-    python -m src.data.parse_scats
-
-Notes for the team
-------------------
-- The raw file has multiple rows per (site, date) — one per detector loop at the
-  intersection (typically 4: north/south/east/west approaches). We sum these to
-  get total intersection flow per 15-minute interval, which is what we want for
-  travel-time estimation between intersections.
-- Lat/lon also varies slightly per detector (each sits on a different approach).
-  We use the centroid of all detectors as the canonical site location.
-- The 'Date' column in the raw file always shows time = 00:15. This is a quirk
-  of the original spreadsheet — ignore the time portion. The actual time of each
-  reading comes from the V00..V95 column (V00 = 00:00–00:15, V01 = 00:15–00:30,
-  ..., V95 = 23:45–00:00).
-"""
-
 from __future__ import annotations
 
 from pathlib import Path
